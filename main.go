@@ -26,6 +26,8 @@ func CatchWebhooks(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	flag.Parse()
+
 	http.HandleFunc("/", CatchWebhooks)
 
 	fmt.Println("starting server at", ":"+*port)
